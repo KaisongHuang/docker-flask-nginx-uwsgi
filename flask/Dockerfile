@@ -26,8 +26,9 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/
 
 RUN chmod +x docker-entrypoint.sh
-RUN mv docker-entrypoint.sh /usr/local/bin/
-RUN ln -s /usr/local/bin/docker-entrypoint.sh /
+# RUN mv docker-entrypoint.sh /usr/local/bin/
+# RUN ln -s /usr/local/bin/docker-entrypoint.sh /
 
 #CMD ["/bin/bash", "docker-entrypoint.sh"]
-ENTRYPOINT ["docker-entrypoint.sh"]
+WORKDIR /app
+ENTRYPOINT [ "docker-entrypoint.sh" ]
