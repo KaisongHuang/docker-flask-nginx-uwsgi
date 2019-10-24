@@ -1,4 +1,4 @@
 #!/bin/bash
 rc-service nginx restart
-# cd /app
+cd /app
 uwsgi app.ini
