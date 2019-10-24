@@ -28,4 +28,4 @@ COPY nginx.conf /etc/nginx/conf.d/
 RUN chmod +x docker-entrypoint.sh
 
 #CMD ["/bin/bash", "docker-entrypoint.sh"]
-ENTRYPOINT ["./docker-entrypoint.sh"]
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
