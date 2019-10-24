@@ -10,8 +10,14 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app 
 ADD . /app
 
+# Install  build tools for installing uwsgi
+RUN apk add --no-cache --virtual .build-deps gcc libc-dev linux-headers
+
 # Install the dependencies
 RUN pip install -r requirements.txt
+
+# Delete build tools
+RUN apk del .build-deps
 
 # Remove the default nginx.conf
 RUN rm /etc/nginx/conf.d/default.conf
