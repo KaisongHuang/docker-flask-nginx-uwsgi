@@ -2,8 +2,10 @@
 FROM alpine:latest
 
 RUN apk add --no-cache bash \
-python3-dev && pip3 install --upgrade pip \
+python3-dev \
 nginx
+
+RUN pip3 install --upgrade pip
 
 # Set the working directory to /app
 WORKDIR /app
