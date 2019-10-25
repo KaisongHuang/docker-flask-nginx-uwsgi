@@ -31,6 +31,6 @@ RUN mkdir -p /run/nginx
 # COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 # RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 # RUN ln -s /usr/local/bin/docker-entrypoint.sh /
-
-#CMD ["/bin/bash", "docker-entrypoint.sh"]
+RUN chmod +x docker-entrypoint.sh
+CMD ["docker-entrypoint.sh"]
 # ENTRYPOINT [ "docker-entrypoint.sh" ]
