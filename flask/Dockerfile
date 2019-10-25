@@ -1,7 +1,7 @@
 # Use the Python3.7.2 image
 FROM alpine:latest
 
-RUN apk add --no-cache bash \
+RUN apk add --no-cache \
 python3-dev \
 nginx
 
@@ -35,5 +35,5 @@ RUN mkdir -p /run/nginx
 # RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 # RUN ln -s /usr/local/bin/docker-entrypoint.sh /
 RUN chmod +x docker-entrypoint.sh
-CMD ["docker-entrypoint.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
 # ENTRYPOINT [ "docker-entrypoint.sh" ]
