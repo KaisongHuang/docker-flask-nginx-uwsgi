@@ -31,9 +31,8 @@ COPY nginx.conf /etc/nginx/conf.d/
 # Create dir needed to run nginx
 RUN mkdir -p /run/nginx
 
-# COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-# RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-# RUN ln -s /usr/local/bin/docker-entrypoint.sh /
 RUN chmod +x docker-entrypoint.sh
+RUN mv docker-entrypoint.sh /usr/local/bin
+RUN ln -s /usr/local/bin/docker-entrypoint.sh /app
 ENTRYPOINT ["docker-entrypoint.sh"]
 # ENTRYPOINT [ "docker-entrypoint.sh" ]
