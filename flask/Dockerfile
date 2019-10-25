@@ -32,6 +32,4 @@ COPY nginx.conf /etc/nginx/conf.d/
 RUN mkdir -p /run/nginx
 
 RUN chmod +x docker-entrypoint.sh
-RUN mv docker-entrypoint.sh /usr/local/bin
-RUN ln -s /usr/local/bin/docker-entrypoint.sh /app
-ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["sh", "docker-entrypoint.sh"]
