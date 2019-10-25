@@ -1,8 +1,9 @@
 # Use the Python3.7.2 image
 FROM alpine:latest
 
-RUN apk add --no-cache python3-dev && pip3 install --upgrade pip
-RUN apk add nginx
+RUN apk add --no-cache bash \
+python3-dev && pip3 install --upgrade pip \
+nginx
 
 # Set the working directory to /app
 WORKDIR /app
