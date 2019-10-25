@@ -1,4 +1,3 @@
 #!/bin/bash
-rc-service nginx restart
-cd /app
+nginx -g "daemon on;"
 uwsgi app.ini

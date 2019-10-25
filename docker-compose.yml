@@ -8,7 +8,5 @@ services:
     restart: always
     environment:
       - APP_NAME=MyFlaskApp
-    expose:
-      - 8080
     ports:
       - "80:80"
