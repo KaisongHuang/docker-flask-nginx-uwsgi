@@ -35,4 +35,3 @@ RUN chmod +x docker-entrypoint.sh
 RUN mv docker-entrypoint.sh /usr/local/bin
 RUN ln -s /usr/local/bin/docker-entrypoint.sh /app
 ENTRYPOINT ["docker-entrypoint.sh"]
-# ENTRYPOINT [ "docker-entrypoint.sh" ]
